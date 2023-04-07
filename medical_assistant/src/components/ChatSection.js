@@ -35,9 +35,10 @@ export default function ChatSection() {
             ...MessageArray,
             { id: nextId++, message:Message }
           ])
-            alert('Submitting!')}}>
+          SetMessage('');
+            }}>
         <div className="ml-8 mb-8 flex flex-row " >
-<input onChange={handleChange} className="w-10/12 h-12 rounded-lg text-black pl-4 break-all" placeholder="Type Here !" type="text">
+<input value={Message} onChange={handleChange} className="w-10/12 h-12 rounded-lg text-black pl-4 break-all" placeholder="Type Here !" type="text">
 
 </input>
 <button className="ml-4 button-color w-32 rounded-lg text-lg font-bold">Send</button>
