@@ -7,10 +7,10 @@ export default function ChatBot() {
     return(
         <>
         <div className=" flex flex-col h-screen">
-         <div >
+         <div>
         <NavBarChat></NavBarChat>
         </div>
-        <div className="grow flex flex-row custom-background gap-24">
+        <div className="grow flex flex-row custom-background ">
         
         <SideBar></SideBar>
         <ChatSection></ChatSection>

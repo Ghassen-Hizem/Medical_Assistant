@@ -12,3 +12,11 @@
   width: 100px;
   height: 100px;
 }
+
+.chat-background{
+  background-color: #0e1217;
+}
+
+.button-color{
+  background-color: rgb(68,192,249);
+}
