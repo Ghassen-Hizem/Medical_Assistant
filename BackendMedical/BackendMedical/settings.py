@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'corsheaders',
@@ -77,6 +78,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'BackendMedical.wsgi.application'
 
+ASGI_APPLICATION = 'BackendMedical.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

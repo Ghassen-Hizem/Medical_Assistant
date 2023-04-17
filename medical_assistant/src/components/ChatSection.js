@@ -1,6 +1,7 @@
 
-import { useState } from "react";
+import {  useState } from "react";
 import ChatBubble from "./ChatBot/ChatBubble";
+import useWebSocket from 'react-use-websocket';
 
 let nextId = 0;
 
@@ -9,7 +10,22 @@ export default function ChatSection() {
   const  [Message , SetMessage] = useState('');
 
   const  [MessageArray,SetmessageArray] = useState([]);
-    
+
+  const {
+    sendMessage,
+
+  } = useWebSocket('ws://localhost:8000/api', {
+    onOpen: () => console.log('opened'),
+    onMessage: (event) => {
+            SetmessageArray([
+                ...MessageArray,
+                { id: nextId++, message:event.data }
+              ])
+    },
+
+  });   
+
+
 
     function handleChange(e){
         SetMessage(e.target.value); 
@@ -31,15 +47,7 @@ export default function ChatSection() {
         </div>
         <form onSubmit={(e) => {
             e.preventDefault();
-            fetch("http://127.0.0.1:8000/api/", {
-                method: "POST",
-                body: JSON.stringify({
-                     "text":  Message,
-                }),
-                headers: {
-                    "content-type": "application/json",
-                },
-            }).catch((e) => console.log(e));
+            sendMessage(Message)
              SetmessageArray([
             ...MessageArray,
             { id: nextId++, message:Message }
