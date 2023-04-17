@@ -31,7 +31,16 @@ export default function ChatSection() {
         </div>
         <form onSubmit={(e) => {
             e.preventDefault();
-          SetmessageArray([
+            fetch("http://127.0.0.1:8000/api/", {
+                method: "POST",
+                body: JSON.stringify({
+                     "text":  Message,
+                }),
+                headers: {
+                    "content-type": "application/json",
+                },
+            }).catch((e) => console.log(e));
+             SetmessageArray([
             ...MessageArray,
             { id: nextId++, message:Message }
           ])
