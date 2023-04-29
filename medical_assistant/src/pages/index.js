@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import ChatBot from './chatbot'
+import Login from './auth/login'
 
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-    <ChatBot></ChatBot>
+    <Login></Login>
       </main>
     </>
   )
