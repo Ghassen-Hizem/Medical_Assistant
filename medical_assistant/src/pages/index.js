@@ -1,9 +1,12 @@
 import Head from 'next/head'
 import ChatBot from './chatbot'
 import Login from './auth/login'
+import {signIn} from "next-auth/react";
 
 
 export default function Home() {
+
+
   return (
     <>
 
@@ -14,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-    <Login></Login>
+    <button onClick={signIn}>login Here</button>
       </main>
     </>
   )
