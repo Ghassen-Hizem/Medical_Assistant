@@ -12,3 +12,4 @@ application = ProtocolTypeRouter({
             path('api', PracticeConsumer.as_asgi())
         ])
 })
+
